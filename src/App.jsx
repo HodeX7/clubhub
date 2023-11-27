@@ -424,14 +424,66 @@ const App = () => {
   };
 
   return (
-    <>
-      {account ? (
-        <ClubHub contract={contract} />
-      ) : (
-        <button onClick={connectWallet}> Connect Wallet</button>
-      )}
-    </>
-  );
+    <div
+    style={{
+      backgroundImage: 'url("b.png")', // Replace with the URL of your background image
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      height: '100vh', // Adjust the height as needed
+      display: 'flex',
+      flexDirection: 'column', // Align items in a column
+      alignItems: 'center',
+      justifyContent: 'center',
+      position: 'relative', // Relative positioning for absolute child
+    }}
+  >
+    {account ? (
+      <ClubHub contract={contract} />
+    ) : (
+      <>
+        <div
+          style={{
+            position: 'absolute',
+            top: '45.7%',
+            left: '37.5%',
+            transform: 'translateY(-50%)',
+            color: '#A9A9A9', 
+            fontSize: '24px', 
+            fontWeight: 'bold',
+            textAlign: 'center',
+          }}
+        >
+          ClubHub?
+        </div>
+        
+         <img
+          src="searchbar.png" 
+          alt="Your Image Alt Text"
+          style={{ width: '500px', marginBottom: '20px' }} 
+        />
+        
+        <button
+          style={{
+            padding: '10px 20px',
+            fontSize: '16px',
+            backgroundColor: '#3498db', 
+            color: '#fff', 
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+            marginTop: '10px', 
+          }}
+          onClick={connectWallet}
+          onMouseOver={(e) => (e.target.style.backgroundColor = '#2c3e50')} 
+          onMouseOut={(e) => (e.target.style.backgroundColor = '#3498db')} 
+
+        >
+          Connect Wallet
+        </button>
+      </>
+    )}
+  </div>
+);
 };
 
 export default App;

@@ -101,7 +101,7 @@ const ClubList = ({ contract }) => {
   };
 
   return (
-    <div className="bg-cover">
+    <div className="bg-cover h-full w-full overflow-y-auto p-4">
       <h6 className="text-m font-semibold text-gray-400 flex justify-between items-center">
         Join clubs with
       </h6>
@@ -110,7 +110,7 @@ const ClubList = ({ contract }) => {
         <span className="text-white font-montserrat">ClubConnector</span>
 
         <button
-          className="bg-black bg-opacity-80 text-white px-3 py-1.5 rounded-md hover:bg-blue-950 transition duration-300 transform scale-95"
+          className="bg-red-500 bg-opacity-80 text-white px-3 py-1.5 rounded-md hover:bg-blue-950 transition duration-300 transform scale-95"
           onClick={() => setIsModalOpen(true)}
         >
           + Club
@@ -122,12 +122,12 @@ const ClubList = ({ contract }) => {
           {clubs.map((club, index) => (
             <div
               key={index}
-              className="border p-4 rounded-3xl shadow-md hover:shadow-lg transition duration-300 bg-black bg-opacity-50"
+              className="border p-4 rounded-3xl shadow-md hover:shadow-lg transition duration-300 bg-black bg-opacity-80" style={{ maxWidth: '500px' }}
             >
               <h2 className="text-xl text-green-400 font-semibold mb-2">
                 {club.name}
               </h2>
-              <img src={club.imageUrl} alt="club image" />
+              <img src={club.imageUrl} alt="club image"  />
               <p className="text-white mb-2">{club.description}</p>
               <p className="text-gray-200">President: {club.organizer}</p>
               <p className="text-gray-200">
